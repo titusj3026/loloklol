@@ -11,6 +11,6 @@ app.post('/post', (request, response) => {
     console.log(request.body)
 })
 
-app.listen(port, function(){
-    console.log(`started server at http://localhost:${port}`)
-})
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
